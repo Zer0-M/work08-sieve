@@ -4,4 +4,4 @@
 
 void bitchange(int * bitarray,int bitindex);
 int bitcmp(int * bitarray,int bitindex );
-int siv_of_E(int n);
+int sieve(int n);

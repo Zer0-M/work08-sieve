@@ -12,7 +12,7 @@ int bitcmp(int * bitarray,int bitindex ){
     int final=1 << bit;
     return bitarray[index]&final;
 }
-int siv_of_E(int n){
+int sieve(int n){
     int size;
     if(n<1000){
         size=n*10;
