@@ -1,7 +1,7 @@
 #include "sieve.h"
 
-int main(/*int argc, char * argv[]*/){
-  /*int iterations = 1;
+int main(int argc, char * argv[]){
+  int iterations = 1;
   int target = 1000000;
   if(argc > 1){
     target = atoi(argv[1]);
@@ -21,8 +21,7 @@ int main(/*int argc, char * argv[]*/){
     //potentially avoid CPU caching
     target++;
 
-  }*/
-  printf("%d\n",sieve(1000000));
+  }
   return 0;
 
 }
