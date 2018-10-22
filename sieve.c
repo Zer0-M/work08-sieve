@@ -9,7 +9,7 @@ int sieve(int n){
     else{
         size=(int)(n*log((double)n)*1.15);
     }
-    int * bucket=calloc((size/32),sizeof(int *));
+    unsigned int * bucket=calloc((size/32),sizeof(int *));
     int count=1;
     for(int i=3;i<size;i+=2){
         if(!(bucket[i/32]&1 << i%32)){
@@ -21,7 +21,7 @@ int sieve(int n){
             }
             if((n<100||i<(n/10))&&i*i>0){
                 for(int j=i*i;j<size;j+=i){
-                    if(j%i==0){
+                    if(j%2!=0&&j%i==0){
                          bucket[j/32]= bucket[j/32]|1 << j%32;
                     }
                 }
