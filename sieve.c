@@ -9,13 +9,12 @@ int sieve(int n){
     else{
         size=(int)(n*log((double)n)*1.15);
     }
-    unsigned int * bucket=calloc((size/32),sizeof(int *));
-    int count=1;
+    unsigned int * bucket=malloc((size/32)*sizeof(int *));
     for(int i=3;i<size;i+=2){
         if(!(bucket[i/32]&1 << i%32)){
             //printf("Prime %d : %d\n",count,i);
-            count++;
-            if(count==n){
+            n--;
+            if(n==1){
                 free(bucket);
                 return i;
             }
