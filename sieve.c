@@ -19,7 +19,7 @@ int sieve(int n){
                 free(bucket);
                 return i;
             }
-            if((n<100||i<(n/10))&&i*i>0){
+            if(i*i>0){
                 for(int j=i*i;j<size;j+=i){
                     if(j%2!=0&&j%i==0){
                          bucket[j/32]= bucket[j/32]|1 << j%32;
