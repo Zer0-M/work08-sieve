@@ -1,7 +1,7 @@
 #include "sieve.h"
 
 
-int sieve(int n){
+/*int sieve(int n){
     int size;
     if(n<1000){
         size=n*10;
@@ -9,12 +9,13 @@ int sieve(int n){
     else{
         size=(int)(n*log((double)n)*1.15);
     }
+    int count=n;
     unsigned int * bucket=malloc((size/32)*sizeof(int *));
     for(int i=3;i<size;i+=2){
         if(!(bucket[i/32]&1 << i%32)){
             //printf("Prime %d : %d\n",count,i);
-            n--;
-            if(n==1){
+            count--;
+            if(count==1){
                 free(bucket);
                 return i;
             }
@@ -27,20 +28,26 @@ int sieve(int n){
             }
         }        
     }
-}
+}*/
 
-/*int sieve(int n){
-    int size=(int)(n*log((double)n)*1.15);
+int sieve(int n){
+    int size;
+    if(n<1000){
+        size=n*10;
+    }
+    else{
+        size=(int)(n*log((double)n)*1.15);
+    }
     char * bucket=calloc(size,sizeof(char *));
-    int count=1;
-    for(int i=3;i<size;i+=2){
+    int count=0;
+    for(int i=2;i<size;i+=1){
         if(!bucket[i]){
             //printf("Prime %d : %d\n",count,i);
             count++;
             if(count==n){
                 return i;
             }
-            if(i*i>0&&i*i<size&&i<(n/10)){
+            if(i*i>0){
                 for(int j=i*i;j<size;j+=i){
                     if(!bucket[j]&&j%i==0){
                         bucket[j]=1;
@@ -49,4 +56,4 @@ int sieve(int n){
             }
         }        
     }
-}*/
+}
