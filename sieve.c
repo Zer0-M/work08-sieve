@@ -9,7 +9,7 @@
     else{
         size=(int)(n*log((double)n)*1.15)/2;
     }
-    int count=1;
+    int count=0;
     int * bucket=calloc(size/32,sizeof(int));
     int start=3;
     int ind=0;
